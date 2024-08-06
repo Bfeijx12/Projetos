@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+struct cadastro 
+{
+	int codigo [10];
+	char nome [50];
+	char cpf [20];
+	char data [10];
+	char vacina [15];
+	char lote[15];
+};
+	int input = 0
+	int data;
+	int lote;
+	int cpf;
+	int qtdpacientes;
+
+void cadastro();
+void lista();
+void consulta();
+
+int main(int argc, char *argv[]) {
+	setlocale(LC_ALL, "");
+	int op;
+	op = 0;
+		
+	while(op != 4)
+	{
+		printf("1 - Cadastrar Vacinado\n");
+		printf("2 - Listar Aplicações da Vacina");
+		printf("3 - Consulta CPF\n");
+		printf("4 - Sair\n");
+		printf("Digite a opção que deseja\n");
+		scanf("%d", &op);
+		
+	switch(op)
+		{
+			case 1: cadastro();
+				break;
+			case 2: lista();
+				break;
+			case 3: consulta();
+				break;
+			case 4: printf("Saindo...");
+				break;
+			default: printf("Opção Inválida, digite novamente!");
+			fflush(stdin);
+		}
+   }   
+	
+system("cls");
+
+void cadastro(){
+	
+	do{
+		printf("Digite seu nome completo: ")
+		scanf("%d", &nome);
+		printf("\nDigite seu CPF: ");
+		scanf("%d", &cpf);
+		printf("\nDigite a vacina aplicada: ");
+		scanf("%s", &vacina);
+		printf("\nDigite a data da aplicação da vacina: ");
+		scanf("%d", &data);
+		printf("\nDigite 1 para realizar novamente um cadastro ou outro valor para sair: ");
+		scanf("%d", &op);
+		
+		linha++;
+     }
+}
+
+void lista(){
+	int i;
+	for(i=0;i<0;i++){
+		if(cpf[i]>0){
+			print("\nNome: %s\nCPF: %d\nVacina: %s\nData: %s\nLote: %d\nCodigo: %d\n", nome[i], cpf[i], vacina[i], data[i], lote[i], codigo[i]);
+			}else{
+				break;
+		}
+	}
+}
+
+void consulta()
+{
+    Paciente *p = NULL;
+    int i;
+    char cpf[20];
+    printf ("Digite o CPF a ser procurado: ");
+    fgets(cpf, 19, stdin);
+    for (i=0; i < qtdpacientes; i++)
+    {
+        if(strcmp(paciente[i].reg, cpf) == 0)
+        {
+            p = &paciente[i];    
+            break;
+        }
+    }
+    return p;
+}			
